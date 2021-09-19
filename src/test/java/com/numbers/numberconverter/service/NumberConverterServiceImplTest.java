@@ -1,8 +1,7 @@
 package com.numbers.numberconverter.service;
 
-import com.numbers.numberconverter.error.ErrorDetail;
+import com.numbers.numberconverter.enums.ErrorDetail;
 import com.numbers.numberconverter.exception.NumberConverterException;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

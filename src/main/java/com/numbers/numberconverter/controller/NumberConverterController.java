@@ -1,8 +1,7 @@
 package com.numbers.numberconverter.controller;
 
-import com.numbers.numberconverter.model.NumberConverterResponseDTO;
+import com.numbers.numberconverter.model.NumberConverterResponse;
 import com.numbers.numberconverter.service.NumberConverterService;
-import com.numbers.numberconverter.service.NumberConverterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +16,8 @@ public class NumberConverterController {
     NumberConverterService numberConverterService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public NumberConverterResponseDTO convertToRoman(@RequestParam("query") int number){
-        String romanNumberal = numberConverterService.convertToRomanNumeral(number);
-        NumberConverterResponseDTO romanNumeralConverterResponseDTO = new NumberConverterResponseDTO(String.valueOf(number),romanNumberal);
-        return romanNumeralConverterResponseDTO;
+    public NumberConverterResponse convertToRoman(@RequestParam("query") int number){
+        String romanNumber = numberConverterService.convertToRomanNumeral(number);
+        return new NumberConverterResponse(String.valueOf(number),romanNumber);
     }
-
 }

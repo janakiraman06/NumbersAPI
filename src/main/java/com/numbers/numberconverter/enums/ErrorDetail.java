@@ -1,4 +1,4 @@
-package com.numbers.numberconverter.error;
+package com.numbers.numberconverter.enums;
 
 public enum ErrorDetail {
     INVALID_INPUT ("INVALID_INPUT", "Input is invalid.  Please provide valid number within the range [1 - 3999]"),

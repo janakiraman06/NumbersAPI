@@ -37,6 +37,11 @@ services:
       - SPLUNK_USER=root
       - SPLUNK_ENABLE_LISTEN=9997
       - SPLUNK_PASSWORD=password
+    healthcheck:
+      test: "wget -q -O - http://localhost:8000/"
+      interval: 1s
+      timeout: 30s
+      retries: 300
     ports:
       - "8000:8000"
 
