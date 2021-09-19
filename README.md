@@ -13,7 +13,7 @@ into roman number
 - [Run Application - StandAlone Mode](#run-application---standalone-mode)
 - [API Request/Responses](#api-requestresponses)
 - [Testing](#testing)
-- [How to un-install Stack?](#un-install-the-application-stack)
+- [Un-install Application Stack](#un-install-the-application-stack)
 - [Next Steps](#next-steps)
 - [Dependency Tree](#dependency-tree)
 - [References](#references)
@@ -257,3 +257,4 @@ docker-compose down
 3. [docker-compose](https://docs.docker.com/compose/)
 4. [Splunk](https://docs.splunk.com/Documentation)
 5. [Prometheus & Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/)
+6. [Swagger UI](https://swagger.io/tools/swagger-ui/)
