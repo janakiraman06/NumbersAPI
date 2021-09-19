@@ -1,6 +1,8 @@
 services:
   numberconverterapp:
-    build: .
+    build:
+      context: ../
+      dockerfile: devops/numberconverterapp/Dockerfile
     user: root
     ports:
       - "8080:8080"
@@ -15,14 +17,14 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./docker/prometheus/:/etc/prometheus
+      - ./prometheus/:/etc/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     depends_on:
       - numberconverterapp
 
   grafana:
-    build: './docker/grafana'
+    build: './grafana'
     hostname: grafana
     depends_on:
       - prometheus
