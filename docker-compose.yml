@@ -11,7 +11,7 @@ services:
 
   prometheus:
     image: prom/prometheus
-    container_name: prometheus
+    hostname: prometheus
     ports:
       - "9090:9090"
     volumes:
@@ -22,12 +22,14 @@ services:
       - numberconverterapp
 
   grafana:
-    image: grafana/grafana
-    container_name: grafana
+    build: './docker/grafana'
+    hostname: grafana
     depends_on:
       - prometheus
     ports:
       - 3000:3000
+    environment:
+      - "GF_SECURITY_ADMIN_PASSWORD=Grafana@2021"
 
   splunk:
     image: splunk/splunk:8.0
