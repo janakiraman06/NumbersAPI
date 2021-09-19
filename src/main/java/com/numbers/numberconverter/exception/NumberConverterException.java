@@ -1,6 +1,6 @@
 package com.numbers.numberconverter.exception;
 
-import com.numbers.numberconverter.enums.ErrorDetail;
+import com.numbers.numberconverter.enumerations.ErrorDetail;
 import lombok.Getter;
 import lombok.Setter;
 

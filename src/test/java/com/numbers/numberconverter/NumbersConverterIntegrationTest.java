@@ -1,7 +1,7 @@
 package com.numbers.numberconverter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.numbers.numberconverter.enums.ErrorDetail;
+import com.numbers.numberconverter.enumerations.ErrorDetail;
 import com.numbers.numberconverter.model.NumberConverterResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

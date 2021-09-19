@@ -1,6 +1,6 @@
 package com.numbers.numberconverter.controller;
 
-import com.numbers.numberconverter.enums.ErrorDetail;
+import com.numbers.numberconverter.enumerations.ErrorDetail;
 import com.numbers.numberconverter.exception.NumberConverterException;
 import com.numbers.numberconverter.model.NumberConverterResponse;
 import com.numbers.numberconverter.service.NumberConverterService;

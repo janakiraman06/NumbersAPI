@@ -1,6 +1,6 @@
 package com.numbers.numberconverter.model;
 
-import com.numbers.numberconverter.enums.ErrorDetail;
+import com.numbers.numberconverter.enumerations.ErrorDetail;
 import lombok.Getter;
 import lombok.Setter;
 
