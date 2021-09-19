@@ -4,6 +4,9 @@ import com.numbers.numberconverter.enumerations.ErrorDetail;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * This is customer Exception created for NumberConverter application
+ */
 @Getter
 @Setter
 public class NumberConverterException extends RuntimeException{

@@ -1,4 +1,4 @@
-package com.numbers.numberconverter.controller;
+package com.numbers.numberconverter.web;
 
 import com.numbers.numberconverter.enumerations.ErrorDetail;
 import com.numbers.numberconverter.exception.NumberConverterException;
@@ -14,6 +14,11 @@ import org.mockito.Mockito;
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+/**
+ * @author Janakiraman Raghu
+ *
+ * Unit Test Class for NumberConverterController
+ */
 @ExtendWith(SpringExtension.class)
 class NumberConverterControllerTest {
 

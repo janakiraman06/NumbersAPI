@@ -15,6 +15,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.LocalDate;
 
+/**
+ * @author Janakiraman Raghu
+ *
+ * This is the configuration class for Swagger Implementation
+ */
 @Configuration
 @EnableSwagger2
 public class SpringFoxConfig {
@@ -26,6 +31,11 @@ public class SpringFoxConfig {
                 .enableUrlTemplating(Boolean.valueOf(swaggerConfigProperties.getEnableUrlTemplating()));
     }
 
+    /**
+     * This method is used to create UIConfiguration object based on the various properties configured.
+     * @param swaggerConfigProperties
+     * @return UiConfiguration
+     */
     @Bean
     UiConfiguration uiConfig(SwaggerConfigProperties swaggerConfigProperties) {
         return UiConfigurationBuilder.builder().deepLinking(Boolean.valueOf(swaggerConfigProperties.getDeepLinking())).displayOperationId(Boolean.valueOf(swaggerConfigProperties.getDisplayOperationId()))
@@ -36,6 +46,7 @@ public class SpringFoxConfig {
                 .supportedSubmitMethods(UiConfiguration.Constants.DEFAULT_SUBMIT_METHODS).validatorUrl(null).build();
     }
 
+    //This is a helper method that is used to generate ApiInfo
     private ApiInfo apiInfo(SwaggerConfigProperties swaggerConfigProperties) {
         return new ApiInfoBuilder().title(swaggerConfigProperties.getTitle()).description(swaggerConfigProperties.getDescription())
                 .version(swaggerConfigProperties.getApiVersion()).build();

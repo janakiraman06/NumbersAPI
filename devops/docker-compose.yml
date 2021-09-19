@@ -1,4 +1,5 @@
 services:
+
   numberconverterapp:
     build:
       context: ../
@@ -63,5 +64,6 @@ services:
       - splunk
     volumes:
       - log_volume:/logs
+
 volumes:
   log_volume:

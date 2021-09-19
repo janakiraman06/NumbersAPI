@@ -5,6 +5,11 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author Janakiraman Raghu
+ *
+ * This class is used to load all the swagger related properties from the application.properties file
+ */
 @Data
 @Configuration("swaggerConfigProperties")
 public class SwaggerConfigProperties {

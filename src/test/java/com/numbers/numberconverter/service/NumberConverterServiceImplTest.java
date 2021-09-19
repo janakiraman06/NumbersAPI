@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NumberConverterServiceImplTest {
+/**
+ * @author Janakiraman Raghu
+ *
+ * Unit Test Class for NumberConverterServiceImpl
+ */
+public class NumberConverterServiceImplTest {
 
     NumberConverterService numberConverterService = new NumberConverterServiceImpl();
 
