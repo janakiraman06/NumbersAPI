@@ -103,6 +103,13 @@ devops_splunkforwarder_1      /sbin/entrypoint.sh start- ...   Up (healthy)   80
 1. Run the `NumberConverterApplication` java class.
 2. Make sure that stack is not running using the Devops functionalities while running in standlone mode, since port 8080 is the default port using by tomcat
 
+## API Spec
+
+### Swagger Documentation
+
+> http://localhost:8080/swagger-ui.html
+![Swagger](readme-images/Swagger.png)
+
 ## DevOps Capabilities
 
 ### Logging
