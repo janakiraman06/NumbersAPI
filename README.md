@@ -34,11 +34,35 @@ into roman number
 
 ## Architecture
 
+Metrics and Monitoring
+  1. JVM metrics are exposed on /actuator/prometheus in the spring boot application.
+  2. Based on the frequency setting, Prometheus scrapes the metrics from spring boot application.
+  3. Grafana retrieves information from prometheus and displays the metrics in dashboard.
+
+Logging
+  1. Application logs are sent to Splunk using splunk forwarder.
+  2. Logs can be seen in the Splunk UI.
+
+Application Security:
+  1. Spring security basic authentication is enabled.
+
+Containerization:
+  1. docker-compose is used to deploy all the required applications(Number converter app, splunk, splunk forwarder, prometheus and Grafana)
+
+Rest API spec:
+  1. Swagger is used for the rest api specification.
+
 ![Architecture](readme-images/Architecture.png)
 
 ## Packaging Layout
 
 ![Packaging-Layout](readme-images/Packaging-Layout.png)
+
+## Dependency Tree
+![](readme-images/DependencyTree-Part1.png)
+![](readme-images/DependencyTree-Part2.png)
+![](readme-images/DependencyTree-Part3.png)
+
 
 ## Build & Deploy
 
@@ -66,13 +90,23 @@ mvn clean install
 ```
 
 4. On successful maven build, we can start the whole application stack using the commands
+      
+5. Change directory to devops folder
 
 ```
 cd devops
-
-docker-compose up -d --build
 ```
+6. To install the stack, run the following command.  This will install the following applications
+- number converter spring boot app
+- splunk forwarder
+- splunk
+- prometheus
+- grafana
 
+```
+docker-compose up -d --build --force-recreate
+```
+  
 5. Make sure all the docker containers are up and running. Especially splunk containers take ~1 min to start up completely.
 
 ```
@@ -259,10 +293,6 @@ docker-compose down
 - Load Testing in Pipeline
 - Helm Chart for Kubernetes deployments
 
-## Dependency Tree
-![](readme-images/DependencyTree-Part1.png)
-![](readme-images/DependencyTree-Part2.png)
-![](readme-images/DependencyTree-Part3.png)
 
 ## References
 
