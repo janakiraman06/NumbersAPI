@@ -88,7 +88,7 @@ devops_splunkforwarder_1      /sbin/entrypoint.sh start- ...   Up (healthy)   80
 
 6. Validate the deployed services are up and running using the endpoints listed below
 
-> Number converter  - http://localhost:8080/actuator/health
+> Number converter  - http://localhost:8080/romannumeral?query=5  [Credential:  testuser/Spring@2021]
 >
 > Swagger UI(API Spec) - http://localhost:8080/swagger-ui.html
 >
@@ -97,6 +97,13 @@ devops_splunkforwarder_1      /sbin/entrypoint.sh start- ...   Up (healthy)   80
 > Grafana - http://localhost:3000/  [Credential:  admin/Grafana@2021]
 > 
 > Splunk - http://localhost:8000/   [Credential:  admin/password]
+
+7. Spring security is enabled for this application.  The credential to access the /romannumeral endpoint is
+
+   ```
+   username: testuser
+   password: Spring@2021
+   ```
 
 ## Run Application - Standalone Mode
 
@@ -147,7 +154,7 @@ devops_splunkforwarder_1      /sbin/entrypoint.sh start- ...   Up (healthy)   80
 
    ![Grafana-Dashboards](readme-images/Grafana-Dashboards.png)
 
-4. Select the JVM(Micrometer) dashboard. 
+4. Select the JVM(Micrometer) dashboard and change the time range to "Last 1 hour" or "Last 30 minutes".
    ![](readme-images/JVM-Dashboard-1.png)
    ![](readme-images/JVM-Dashboard-2.png)
    ![](readme-images/JVM-Dashboard-3.png)
@@ -164,7 +171,7 @@ devops_splunkforwarder_1      /sbin/entrypoint.sh start- ...   Up (healthy)   80
 ### Successful Request
 
 ```
-curl -X GET "http://localhost:8080/romannumeral?query=100" -H "accept: application/json"
+curl -X GET "http://localhost:8080/romannumeral?query=100" -H "accept: application/json"  -H "Authorization: Basic dGVzdHVzZXI6U3ByaW5nQDIwMjE="
 ```
 
 ### Successful Response
@@ -180,7 +187,7 @@ Http Status Code - 200
 ### Error Request
 
 ```
-curl -X GET "http://localhost:8080/romannumeral?query=4000" -H "accept: application/json"
+curl -X GET "http://localhost:8080/romannumeral?query=4000" -H "accept: application/json"  -H "Authorization: Basic dGVzdHVzZXI6U3ByaW5nQDIwMjE="
 ```
 
 ### Error Response
